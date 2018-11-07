@@ -1,5 +1,5 @@
 {
-  "name": "next-launch-darkly",
+  "name": "launch-darkly-react-native",
   "version": "0.0.14",
   "description": "React Native wrapper over LaunchDarkly SDK's for iOS and Android.",
   "main": "index.js",
