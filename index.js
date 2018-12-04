@@ -6,14 +6,17 @@ import {
 
 const { RNLaunchDarkly } = NativeModules;
 
+
 class LaunchDarkly {
+  static flags;
+
   constructor () {
     this.emitter = new NativeEventEmitter(RNLaunchDarkly);
     this.listeners = {};
   }
 
-  configure (apiKey, options) {
-    RNLaunchDarkly.configure(apiKey, options);
+  configure (apiKey, user) {
+    RNLaunchDarkly.configure(apiKey, user);
   }
 
   boolVariation (featureName, callback) {
@@ -22,6 +25,42 @@ class LaunchDarkly {
 
   stringVariation (featureName, fallback, callback) {
     RNLaunchDarkly.stringVariation(featureName, fallback, callback);
+  }
+
+  allFlags(callback){
+    if (Platform.OS === 'android') {
+      RNLaunchDarkly.allFlags(callback);
+      return;
+    }
+
+    // The iOS Launch Darkly SDK doesn't have allFlags :(
+    let allFlags = {};
+    let promises = [];
+
+    LaunchDarkly.flags.forEach(flag => {
+      let promise = new Promise((resolve) => {
+        RNLaunchDarkly.boolVariation(flag, (value) => {
+          allFlags[flag] = value;
+          resolve();
+        });
+      });
+      promises.push(promise);
+    });
+
+    Promise
+      .all(promises)
+      .then(() => {
+          callback(JSON.stringify(allFlags));
+        }
+      );
+  }
+
+  setFlags(flags) {
+    LaunchDarkly.flags = flags;
+  }
+
+  identify(user){
+    RNLaunchDarkly.identify(user);
   }
 
   addFeatureFlagChangeListener (featureName, callback) {

@@ -5,8 +5,5 @@
 #import "LDClient.h"
 
 @interface RNLaunchDarkly : RCTEventEmitter <RCTBridgeModule>
-
-@property(nonatomic) LDUserModel *user;
-
 @end
 

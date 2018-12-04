@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1737EAEB214AAB830066EBAE /* UserMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1737EAEA214AAB830066EBAE /* UserMapper.m */; };
 		78DF49A6200F9E25000423D3 /* RNLaunchDarkly.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNLaunchDarkly.m */; };
 		78DF49A7200F9E2C000423D3 /* RNLaunchDarkly.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3E7B5881CC2AC0600A0062D /* RNLaunchDarkly.h */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNLaunchDarkly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNLaunchDarkly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1737EAE9214AAB830066EBAE /* UserMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserMapper.h; sourceTree = "<group>"; };
+		1737EAEA214AAB830066EBAE /* UserMapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserMapper.m; sourceTree = "<group>"; };
 		78DF4A0E200FAAD0000423D3 /* DarklyConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DarklyConstants.h; sourceTree = "<group>"; };
 		78DF4A0F200FAB25000423D3 /* LDClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDClient.h; sourceTree = "<group>"; };
 		78DF4A11200FAC4C000423D3 /* LDConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDConfig.h; sourceTree = "<group>"; };
@@ -55,11 +58,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		1732432C214B305A00B01918 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
 				78DF49A5200F9E12000423D3 /* RNLaunchDarkly */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				1732432C214B305A00B01918 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +85,8 @@
 				78DF4A12200FAC70000423D3 /* LDUserBuilder.h */,
 				78DF4A13200FAC8D000423D3 /* LDUserModel.h */,
 				78DF4A14200FACB0000423D3 /* LDUtil.h */,
+				1737EAE9214AAB830066EBAE /* UserMapper.h */,
+				1737EAEA214AAB830066EBAE /* UserMapper.m */,
 			);
 			path = RNLaunchDarkly;
 			sourceTree = "<group>";
@@ -135,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78DF49A6200F9E25000423D3 /* RNLaunchDarkly.m in Sources */,
+				1737EAEB214AAB830066EBAE /* UserMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
